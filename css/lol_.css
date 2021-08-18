@@ -47,4 +47,8 @@
   .skin_list .skin_box .name p{
     width: 100%;
   }
+  .off{
+    right: 0;
+    width: 2rem;
+  }
 }
