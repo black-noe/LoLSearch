@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="tgtest-ignore" content="all">
+  <title>英雄联盟查询</title>
+  <link rel="shortcut icon" href="https://game.gtimg.cn/images/lol/logo/small.png">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+  <link rel="stylesheet" href="css/lol.css">
+  <link rel="stylesheet" href="css/lol_.css">
+
+  <script src="js/vue.global.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="//game.gtimg.cn/images/js/ArtTemplate.js"></script>
+ 
+</head>
+<body>
+  <div id="app" v-cloak>
+
+    <div class="header">
+      <img src="https://game.gtimg.cn/images/lol/logo/big.png" alt="">
+      <div class="search">
+        <div class="search_box">
+          <input type="text" placeholder="搜索英雄(精确搜索)" v-model="search_name">
+          <i class="fa fa-close update" @click="search_name = ''"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="hero_list">
+      <ul>
+        
+        <li v-for="(item,index) in data.hero" :key="item">
+            <img :src="'//game.gtimg.cn/images/lol/act/img/champion/'+ item.alias +'.png'" alt="" @click="skin_open(item.heroId)">
+            <!-- <img :src="'//game.gtimg.cn/images/lol/act/img/skinloading/'+ item.heroId +'000.jpg'" alt="" @click="skin_open(item.heroId)"> -->
+            <div class="name"><p @click="audio_name(index)">{{item.name}}</p></div>
+            <audio controls="controls" style="display: none ;">
+              <source :src="item.banAudio" type="audio/ogg">
+            </audio>
+        </li>
+      </ul>
+    </div>
+    <div class="skin_list" v-if="skinMenu" v-cloak>
+      <div class="skin_box"> 
+        <h3 class="skin_num">皮肤数:{{skin_list.length-1}}</h3>
+        <ul>
+          <li v-for="(item,index) in skin_list" :key="item">
+              <img :src="'//game.gtimg.cn/images/lol/act/img/skinloading/'+ item.img +'.jpg'">
+              <div class="name"><p>{{item.name}}</p></div>
+          </li>
+        </ul>
+        <div class="page_move left fa fa-chevron-left fa-3x" @click="move(1)"></div>
+        <div class="page_move right fa fa-chevron-right fa-3x" @click="move(2)"></div>
+        <div @click="off" class="off">关闭</div>
+      </div>
+    </div>
+    <div class="footer">
+      <div v-if="data.hero != 0"> 
+        <button class="yuying" @click="playAll">播放所有语言(鬼畜慎用)</button>
+        <button class="yuying" @click="math_play">随机播放</button>
+        <div class="tips tips_left">
+          <p>仅供参考学习</p>
+          <p>联系方式QQ：<a href="tencent://message/?uin=2744881984&Menu=yes& Service=300&sigT=42a1e5347953b64c5ff3980f8a6e644d4b31456cb0b6ac6b27663a3c4dd0f4aa14a543b1716f9d45">2744881984</a></p>
+        </div> 
+        <div class="tips">
+          <p>游戏版本:  {{data.version}}</p>
+          <p>API更新时间--{{data.fileTime}}</p>
+        </div>
+      </div>
+    </div>
+   </div>
+  </body>
+<script src="js/LoLData.js"></script>
+</html>
