@@ -1,54 +1,81 @@
 @media screen and (max-width: 1200px) {
-  #app{
-    width: 100%;
-  }
-  .hero_list ul{
-    width: 100%;
-  }
-  .hero_list ul li{
-    width: 25%;
-    margin: 0 0 2rem 0;
-  }
-  .hero_list ul li img{
-    width: 80%;
-  }
-  .hero_list ul li .name p{
-    font-size: 1rem;
-  }
-  .header .search .search_box input{
-    width: 80%;
-  }
-  .header .search .search_box .update{
-    right: 5%;
-  }
-  .footer .tips{
-    text-align: right;
-    z-index: -1;
-  }
-  .footer .tips_left{ 
-    text-align: left;
-  }
-  .header .search .search_box{
-    margin-bottom: 1rem;
-  }
-  .skin_list .skin_box{
-    left: 20%;
-    width: 60%;
-    overflow: hidden;
-  }
-  .skin_list .skin_box ul li{
-    margin: unset;
-    width: 100%;
-  }
-  .skin_list .skin_box ul li img{
-    width: 100vh;
-    border-radius: 0;
-  }
-  .skin_list .skin_box .name p{
-    width: 100%;
-  }
-  .off{
-    right: 0;
-    width: 2rem;
-  }
+    body {
+        background-image: url("/images/background_2.png");
+        background-size: 100% 100%;
+    }
+    #app {
+        width: 100%;
+    }
+    .hero_list ul {
+        width: 100%;
+    }
+    .hero_list ul li {
+        width: 25%;
+        margin: 0 0 2rem 0;
+    }
+    .hero_list ul li img {
+        width: 80%;
+    }
+    .hero_list ul li .name p {
+        font-size: 1rem;
+        overflow: hidden;
+        height: 20px;
+    }
+    .header .search {
+        margin: 2vh 0;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .header .search .search_box input {
+        width: 80%;
+    }
+    .header .search .search_box .update {
+        right: 5%;
+    }
+    .footer .tips a,
+    .footer {
+        color: white;
+    }
+    .footer .tips {
+        text-align: right;
+        z-index: -1;
+    }
+    .footer .tips_left {
+        text-align: left;
+    }
+    .header .search .search_box {}
+    .skin_list .skin_box {
+        left: 20%;
+        width: 60%;
+    }
+    .skin_list .skin_box ul li {
+        margin: unset;
+        width: 100%;
+    }
+    .skin_list .skin_box ul li img {
+        width: 100vh;
+        border-radius: 0;
+    }
+    .skin_list .skin_box .name p {
+        width: 100%;
+    }
+    .off {
+        right: 0;
+        width: 2rem;
+    }
+    .gesture {
+        display: none;
+    }
+    .hero_position ul li {
+        color: #36dac3;
+    }
+    .fa-3x {
+        font-size: 2.5rem;
+    }
+    .hero_position_click_on {
+        outline: 5px solid #21e8d6;
+    }
+    .hero_position ul li {
+        margin: 0 17px 15px 10px;
+    }
 }
